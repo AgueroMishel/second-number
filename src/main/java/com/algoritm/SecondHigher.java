@@ -1,19 +1,25 @@
 package com.algoritm;
 
+import java.util.List;
+
 public class SecondHigher {
-    public static int find(int[] unsortedArray) {
-        int firstNumber = unsortedArray[0];
-        int secondNumber = unsortedArray[0];
+    public static int find(List<Integer> unsortedList) {
+        if(!unsortedList.isEmpty() && unsortedList != null) {
+            int firstNumber = unsortedList.get(0);
+            int secondNumber = unsortedList.get(0);
 
-        for(int i = 1; i < unsortedArray.length; i++) {
-            if(firstNumber < unsortedArray[i]) {
-                secondNumber = firstNumber;
-                firstNumber = unsortedArray[i];
-            } else if (secondNumber < unsortedArray[i] || firstNumber == secondNumber) {
-                secondNumber = unsortedArray[i];
+            for(int currentInteger : unsortedList) {
+                if(firstNumber < currentInteger) {
+                    secondNumber = firstNumber;
+                    firstNumber = currentInteger;
+                } else if (secondNumber < currentInteger || firstNumber == secondNumber) {
+                    secondNumber = currentInteger;
+                }
             }
-        }
 
-        return secondNumber;
+            return secondNumber;
+        } else {
+            return 0;
+        }
     }
 }
