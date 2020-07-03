@@ -1,17 +1,18 @@
 package com.algoritm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Random;
 
 public class FindSecondHigherTest {
 
     @Test
     public void testOneNumber() {
-        int[] positive = {1};
-        int[] negative = {-1};
-        int[] zero = {0};
+        List<Integer> positive = new ArrayList(){{add(1);}};
+        List<Integer> negative = new ArrayList(){{add(-1);}};
+        List<Integer> zero = new ArrayList(){{add(0);}};
 
         Assert.assertEquals(1, SecondHigher.find(positive));
         Assert.assertEquals(-1, SecondHigher.find(negative));
@@ -20,19 +21,19 @@ public class FindSecondHigherTest {
 
     @Test
     public void testTwoNumbers() {
-        int[] positivesA = {7, 5};
-        int[] positivesB = {5, 7};
-        int[] negativesA = {-1, -3};
-        int[] negativesB = {-3, -1};
-        int[] positiveNegativeA = {1, 0};
-        int[] positiveNegativeB = {0, 1};
-        int[] negativePositiveA = {-1, 0};
-        int[] negativePositiveB = {0, -1};
-        int[] zeros = {0, 0};
-        int[] zeroPositiveA = {0, 1};
-        int[] zeroPositiveB = {1, 0};
-        int[] zeroNegativeA = {0, -1};
-        int[] zeroNegativeB = {-1, 0};
+        List<Integer> positivesA = new ArrayList(){{add(7); add(5);}};
+        List<Integer> positivesB = new ArrayList(){{add(5); add(7);}};
+        List<Integer> negativesA = new ArrayList(){{add(-1); add(-3);}};
+        List<Integer> negativesB = new ArrayList(){{add(-3); add(-1);}};
+        List<Integer> positiveNegativeA = new ArrayList(){{add(1); add(0);}};
+        List<Integer> positiveNegativeB = new ArrayList(){{add(0); add(1);}};
+        List<Integer> negativePositiveA = new ArrayList(){{add(-1); add(0);}};
+        List<Integer> negativePositiveB = new ArrayList(){{add(0); add(-1);}};
+        List<Integer> zeros = new ArrayList(){{add(0); add(0);}};
+        List<Integer> zeroPositiveA = new ArrayList(){{add(0); add(1);}};
+        List<Integer> zeroPositiveB = new ArrayList(){{add(1); add(0);}};
+        List<Integer> zeroNegativeA = new ArrayList(){{add(0); add(-1);}};
+        List<Integer> zeroNegativeB = new ArrayList(){{add(-1); add(0);}};
 
         Assert.assertEquals(5, SecondHigher.find(positivesA));
         Assert.assertEquals(5, SecondHigher.find(positivesB));
@@ -51,13 +52,13 @@ public class FindSecondHigherTest {
 
     @Test
     public void testThreeNumbers() {
-        int[] arrayA = {3, 4, 5};
-        int[] arrayB = {5, 4, 3};
-        int[] arrayC = {5, -1, 2};
-        int[] arrayD = {-2, -3, -4};
-        int[] arrayE = {-3, -2, -1};
-        int[] arrayF = {5, -2, -1};
-        int[] arrayG = {-3, 0, 1};
+        List<Integer> arrayA = new ArrayList(){{add(3); add(4); add(5);}};
+        List<Integer> arrayB = new ArrayList(){{add(5); add(4); add(3);}};
+        List<Integer> arrayC = new ArrayList(){{add(5); add(-1); add(2);}};
+        List<Integer> arrayD = new ArrayList(){{add(-2); add(-3); add(-4);}};
+        List<Integer> arrayE = new ArrayList(){{add(-3); add(-2); add(-1);}};
+        List<Integer> arrayF = new ArrayList(){{add(5); add(-2); add(-1);}};
+        List<Integer> arrayG = new ArrayList(){{add(-3); add(0); add(1);}};
 
         Assert.assertEquals(4, SecondHigher.find(arrayA));
         Assert.assertEquals(4, SecondHigher.find(arrayB));
